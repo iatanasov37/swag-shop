@@ -30,6 +30,7 @@
 
 .App-main {
   background-color: #282c34;
+  padding-top: 35px;
 }
 
 @keyframes App-logo-spin {

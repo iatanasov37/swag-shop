@@ -32,8 +32,12 @@ class App  extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
         </header>
-        <div className="App-main">
-          <Product />
+        <div className="App-main container">
+          <div className="row">
+          <Product className="col-sm-4 col-4" price="4.23" title="Cool Toy Gun" imgUrl="https://www.kindpng.com/picc/m/231-2315339_water-gun-firearm-toy-weapon-water-gun-png.png"/>
+          <Product className="col-sm-4 col-4" price="4.23" title="Cool Toy Gun" imgUrl="https://www.kindpng.com/picc/m/231-2315339_water-gun-firearm-toy-weapon-water-gun-png.png"/>
+          <Product className="col-sm-4 col-4" price="4.23" title="Cool Toy Gun" imgUrl="https://www.kindpng.com/picc/m/231-2315339_water-gun-firearm-toy-weapon-water-gun-png.png"/>
+          </div>
         </div>
       </div>
     );

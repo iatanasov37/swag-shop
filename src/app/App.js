@@ -6,7 +6,8 @@ import React, {Component} from 'react';
 //Components
 import Product from '../product/product';
 import WishList from '../wishlist/wishlist';
-import ProductCondensed from '../product-condensed/product-condensed';
+
+
 
 
 

@@ -13,18 +13,40 @@ class App  extends Component {
   
   constructor(props){
     super(props);
+    this.state = {products:[]};
+
+    //Bind functions
     this.loadData = this.loadData.bind(this);
+    this.productList = this.productList.bind(this);
+
     this.loadData();
+    
+    
+    
+
   }
 
+
+
   loadData = () => {
+    // Can't access this inside of a promise. Creating an outer reference to it with "var self = this;"
+    // Do every time when you see .then 
+    var self = this;
     http.getProducts().then(data => {
-      console.log(data);
+      self.setState({products: data});
     }, err => {
       console.log("error");
     });
   }
   
+  productList = () => {
+    const list = this.state.products.map((product) => 
+      <div className="col-sm-4" key={product._id}>
+        <Product title={product.title} price={product.price} img={product.imgUrl} />
+      </div>
+    );
+    return (list);
+  }
 
   render(){
     return (
@@ -34,9 +56,7 @@ class App  extends Component {
         </header>
         <div className="App-main container">
           <div className="row">
-          <Product className="col-sm-4 col-4" price="4.23" title="Cool Toy Gun" imgUrl="https://www.kindpng.com/picc/m/231-2315339_water-gun-firearm-toy-weapon-water-gun-png.png"/>
-          <Product className="col-sm-4 col-4" price="4.23" title="Cool Toy Gun" imgUrl="https://www.kindpng.com/picc/m/231-2315339_water-gun-firearm-toy-weapon-water-gun-png.png"/>
-          <Product className="col-sm-4 col-4" price="4.23" title="Cool Toy Gun" imgUrl="https://www.kindpng.com/picc/m/231-2315339_water-gun-firearm-toy-weapon-water-gun-png.png"/>
+            {this.productList()};
           </div>
         </div>
       </div>

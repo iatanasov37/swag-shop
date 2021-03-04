@@ -1,3 +1,14 @@
+# Project description
+
+This was a code along project that I used to grasp on the basics of React.js, it's module-like structure, components and notification services to handle data that is taken from a backend and is rendered on the page.
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

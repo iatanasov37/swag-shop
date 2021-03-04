@@ -18,11 +18,14 @@ class NotificationService {
         let obs = observers[notifName];
         for (var i = 0; i < obs.length; i++) {
             var obj = obs[i];
+
+            console.log(obj);
+
             obj.callBack(data);
         }
     }
 
-    addObserver = (notifName,observer, callBack) => {
+    addObserver = (notifName,observer,callBack) => {
         let obs = observers[notifName];
 
         if (!obs) {
@@ -30,6 +33,9 @@ class NotificationService {
         }
 
         let obj = {observer: observer, callBack: callBack}
+
+        console.log(callBack);
+
         observers[notifName].push(obj);
     }
 

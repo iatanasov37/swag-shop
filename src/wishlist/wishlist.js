@@ -18,11 +18,12 @@ class WishList extends Component {
 
         //Bind functions
         this.createWishList = this.createWishList.bind(this);
-        this.onWishListChanged = this.onWishListChanged(this);
+        this.onWishListChanged = this.onWishListChanged.bind(this);
 
     }
 
     componentDidMount() {
+        console.log(this);
         ns.addObserver(NOTIF_WISHLIST_CHANGED,this,this.onWishListChanged);
     }
 
